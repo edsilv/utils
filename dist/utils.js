@@ -15,10 +15,10 @@ var Utils;
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {
-    var Color = (function () {
-        function Color() {
+    var Colors = (function () {
+        function Colors() {
         }
-        Color.Float32ColorToARGB = function (float32Color) {
+        Colors.Float32ColorToARGB = function (float32Color) {
             var a = (float32Color & 0xff000000) >>> 24;
             var r = (float32Color & 0xff0000) >>> 16;
             var g = (float32Color & 0xff00) >>> 8;
@@ -26,26 +26,26 @@ var Utils;
             var result = [a, r, g, b];
             return result;
         };
-        Color._ComponentToHex = function (c) {
+        Colors._ComponentToHex = function (c) {
             var hex = c.toString(16);
             return hex.length == 1 ? "0" + hex : hex;
         };
-        Color.RGBToHexString = function (rgb) {
-            Color.Coalesce(rgb);
-            return "#" + Color._ComponentToHex(rgb[0]) + Color._ComponentToHex(rgb[1]) + Color._ComponentToHex(rgb[2]);
+        Colors.RGBToHexString = function (rgb) {
+            Colors.Coalesce(rgb);
+            return "#" + Colors._ComponentToHex(rgb[0]) + Colors._ComponentToHex(rgb[1]) + Colors._ComponentToHex(rgb[2]);
         };
-        Color.ARGBToHexString = function (argb) {
-            return "#" + Color._ComponentToHex(argb[0]) + Color._ComponentToHex(argb[1]) + Color._ComponentToHex(argb[2]) + Color._ComponentToHex(argb[3]);
+        Colors.ARGBToHexString = function (argb) {
+            return "#" + Colors._ComponentToHex(argb[0]) + Colors._ComponentToHex(argb[1]) + Colors._ComponentToHex(argb[2]) + Colors._ComponentToHex(argb[3]);
         };
-        Color.Coalesce = function (arr) {
+        Colors.Coalesce = function (arr) {
             for (var i = 1; i < arr.length; i++) {
                 if (typeof (arr[i]) === 'undefined')
                     arr[i] = arr[i - 1];
             }
         };
-        return Color;
+        return Colors;
     })();
-    Utils.Color = Color;
+    Utils.Colors = Colors;
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {
@@ -164,8 +164,8 @@ var Utils;
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {
-    var Measurement;
-    (function (Measurement) {
+    var Measurements;
+    (function (Measurements) {
         var Size = (function () {
             function Size(width, height) {
                 this.width = width;
@@ -173,7 +173,7 @@ var Utils;
             }
             return Size;
         })();
-        Measurement.Size = Size;
+        Measurements.Size = Size;
         var Dimensions = (function () {
             function Dimensions() {
             }
@@ -195,8 +195,8 @@ var Utils;
             };
             return Dimensions;
         })();
-        Measurement.Dimensions = Dimensions;
-    })(Measurement = Utils.Measurement || (Utils.Measurement = {}));
+        Measurements.Dimensions = Dimensions;
+    })(Measurements = Utils.Measurements || (Utils.Measurements = {}));
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {

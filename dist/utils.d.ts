@@ -4,7 +4,7 @@ declare module Utils {
     }
 }
 declare module Utils {
-    class Color {
+    class Colors {
         static Float32ColorToARGB(float32Color: number): number[];
         private static _ComponentToHex(c);
         static RGBToHexString(rgb: number[]): string;
@@ -44,7 +44,7 @@ declare module Utils.Maths {
         static FromAngle(angle: number): Vector;
     }
 }
-declare module Utils.Measurement {
+declare module Utils.Measurements {
     class Size {
         width: number;
         height: number;
