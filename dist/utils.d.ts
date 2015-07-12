@@ -56,7 +56,7 @@ declare module Utils.Measurement {
 }
 declare module Utils {
     class Numbers {
-        static NumericalInput(event: JQueryKeyEventObject): boolean;
+        static NumericalInput(event: any): boolean;
     }
 }
 declare module Utils {
