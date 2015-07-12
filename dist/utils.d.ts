@@ -17,6 +17,33 @@ declare module Utils {
         static GetTimeStamp(): number;
     }
 }
+declare module Utils.Maths {
+    class Vector {
+        X: number;
+        Y: number;
+        constructor(x: number, y: number);
+        Get(): Vector;
+        Set(x: number, y: number): void;
+        Add(v: Vector): void;
+        static Add(v1: Vector, v2: Vector): Vector;
+        Sub(v: Vector): void;
+        static Sub(v1: Vector, v2: Vector): Vector;
+        Mult(n: number): void;
+        static Mult(v1: Vector, v2: Vector): Vector;
+        static MultN(v1: Vector, n: number): Vector;
+        Div(n: number): void;
+        static Div(v1: Vector, v2: Vector): Vector;
+        static DivN(v1: Vector, n: number): Vector;
+        Mag(): number;
+        MagSq(): number;
+        Normalise(): void;
+        Limit(max: number): void;
+        Equals(v: Vector): boolean;
+        Heading(): number;
+        static Random2D(): Vector;
+        static FromAngle(angle: number): Vector;
+    }
+}
 declare module Utils.Measurement {
     class Size {
         width: number;

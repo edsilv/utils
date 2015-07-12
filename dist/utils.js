@@ -61,6 +61,109 @@ var Utils;
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {
+    var Maths;
+    (function (Maths) {
+        var Vector = (function () {
+            function Vector(x, y) {
+                this.X = x;
+                this.Y = y;
+            }
+            Vector.prototype.Get = function () {
+                return new Vector(this.X, this.Y);
+            };
+            Vector.prototype.Set = function (x, y) {
+                this.X = x;
+                this.Y = y;
+            };
+            //get X(): number {
+            //    return this._X;
+            //}
+            //
+            //set X(value: number) {
+            //    this._X = value;
+            //    //this.OnPropertyChanged("X");
+            //}
+            //
+            //get Y(): number {
+            //    return this._Y;
+            //}
+            //
+            //set Y(value: number) {
+            //    this._Y = value;
+            //    //this.OnPropertyChanged("Y");
+            //}
+            Vector.prototype.Add = function (v) {
+                this.X += v.X;
+                this.Y += v.Y;
+            };
+            Vector.Add = function (v1, v2) {
+                return new Vector(v1.X + v2.X, v1.Y + v2.Y);
+            };
+            Vector.prototype.Sub = function (v) {
+                this.X -= v.X;
+                this.Y -= v.Y;
+            };
+            Vector.Sub = function (v1, v2) {
+                return new Vector(v1.X - v2.X, v1.Y - v2.Y);
+            };
+            Vector.prototype.Mult = function (n) {
+                this.X = this.X * n;
+                this.Y = this.Y * n;
+            };
+            Vector.Mult = function (v1, v2) {
+                return new Vector(v1.X * v2.X, v1.Y * v2.Y);
+            };
+            Vector.MultN = function (v1, n) {
+                return new Vector(v1.X * n, v1.Y * n);
+            };
+            Vector.prototype.Div = function (n) {
+                this.X = this.X / n;
+                this.Y = this.Y / n;
+            };
+            Vector.Div = function (v1, v2) {
+                return new Vector(v1.X / v2.X, v1.Y / v2.Y);
+            };
+            Vector.DivN = function (v1, n) {
+                return new Vector(v1.X / n, v1.Y / n);
+            };
+            Vector.prototype.Mag = function () {
+                return Math.sqrt(this.X * this.X + this.Y * this.Y);
+            };
+            Vector.prototype.MagSq = function () {
+                return (this.X * this.X + this.Y * this.Y);
+            };
+            Vector.prototype.Normalise = function () {
+                var m = this.Mag();
+                if (m != 0 && m != 1) {
+                    this.Div(m);
+                }
+            };
+            Vector.prototype.Limit = function (max) {
+                if (this.MagSq() > max * max) {
+                    this.Normalise();
+                    this.Mult(max);
+                }
+            };
+            Vector.prototype.Equals = function (v) {
+                return (this.X == v.X && this.Y == v.Y);
+            };
+            Vector.prototype.Heading = function () {
+                var angle = Math.atan2(-this.Y, this.X);
+                return -1 * angle;
+            };
+            Vector.Random2D = function () {
+                return Vector.FromAngle((Math.random() * Math.TAU));
+            };
+            Vector.FromAngle = function (angle) {
+                return new Vector(Math.cos(angle), Math.sin(angle));
+            };
+            return Vector;
+        })();
+        Maths.Vector = Vector;
+    })(Maths = Utils.Maths || (Utils.Maths = {}));
+})(Utils || (Utils = {}));
+var Utils;
+(function (Utils) {
     var Measurement;
     (function (Measurement) {
         var Size = (function () {
