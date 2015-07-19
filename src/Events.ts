@@ -14,7 +14,7 @@ module Utils {
 
             debounceDuration = debounceDuration || 100;
 
-            return () => {
+            return function() {
                 if (!fn.debouncing) {
                     var args = Array.prototype.slice.apply(arguments);
                     fn.lastReturnVal = fn.apply(window, args);
