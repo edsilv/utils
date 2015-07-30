@@ -16,9 +16,6 @@ export declare class Numbers {
 export declare class Dates {
     static GetTimeStamp(): number;
 }
-export declare class Objects {
-    static ConvertToPlainObject(obj: any): any;
-}
 export declare class Urls {
     static GetHashParameter(key: string, doc?: Document): string;
     static SetHashParameter(key: string, value: any, doc?: Document): void;
