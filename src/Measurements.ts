@@ -24,5 +24,12 @@ module Utils.Measurements {
 
             return new Size(Math.floor(width), Math.floor(height));
         }
+
+        static HitRect(x: number, y: number, w: number, h: number, mx: number, my: number) {
+            if (mx > x && mx < (x + w) && my > y && my < (y + h)) {
+                return true;
+            }
+            return false;
+        }
     }
 }
