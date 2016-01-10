@@ -2638,6 +2638,19 @@ var Utils;
 })(Utils || (Utils = {}));
 var Utils;
 (function (Utils) {
+    var Keyboard = (function () {
+        function Keyboard() {
+        }
+        Keyboard.GetCharCode = function (e) {
+            var charCode = (typeof e.which == "number") ? e.which : e.keyCode;
+            return charCode;
+        };
+        return Keyboard;
+    })();
+    Utils.Keyboard = Keyboard;
+})(Utils || (Utils = {}));
+var Utils;
+(function (Utils) {
     var Maths;
     (function (Maths) {
         var Vector = (function () {

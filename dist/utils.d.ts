@@ -1419,6 +1419,11 @@ declare module Utils {
         static Debounce(fn: any, debounceDuration: number): () => any;
     }
 }
+declare module Utils {
+    class Keyboard {
+        static GetCharCode(e: KeyboardEvent): number;
+    }
+}
 declare module Utils.Maths {
     class Vector {
         X: number;
