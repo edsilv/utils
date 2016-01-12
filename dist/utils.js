@@ -5,14 +5,15 @@ var Utils;
         }
         Async.WaitFor = function (test, successCallback, failureCallback, interval, maxTries, numTries) {
             if (!interval)
-                interval = 50;
+                interval = 200;
             if (!maxTries)
-                maxTries = Number.MAX_VALUE;
+                maxTries = 100; // try 100 times over 20 seconds
             if (!numTries)
                 numTries = 0;
             numTries += 1;
             if (numTries > maxTries) {
-                failureCallback();
+                if (failureCallback)
+                    failureCallback();
             }
             else if (test()) {
                 successCallback();
