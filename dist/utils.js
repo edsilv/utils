@@ -1,5 +1,34 @@
 var Utils;
 (function (Utils) {
+    var Async = (function () {
+        function Async() {
+        }
+        Async.WaitFor = function (test, successCallback, failureCallback, interval, maxTries, numTries) {
+            if (!interval)
+                interval = 50;
+            if (!maxTries)
+                maxTries = Number.MAX_VALUE;
+            if (!numTries)
+                numTries = 0;
+            numTries += 1;
+            if (numTries > maxTries) {
+                failureCallback();
+            }
+            else if (test()) {
+                successCallback();
+            }
+            else {
+                setTimeout(function () {
+                    Async.WaitFor(test, successCallback, failureCallback, interval, maxTries, numTries);
+                }, interval);
+            }
+        };
+        return Async;
+    })();
+    Utils.Async = Async;
+})(Utils || (Utils = {}));
+var Utils;
+(function (Utils) {
     var Bools = (function () {
         function Bools() {
         }
