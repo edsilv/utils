@@ -2974,14 +2974,14 @@ var Utils;
             var record = new Utils.StorageItem();
             record.value = value;
             record.expiresAt = new Date().getTime() + expirationMS;
-            switch (storageType) {
-                case Utils.StorageType.memory:
+            switch (storageType.value) {
+                case Utils.StorageType.memory.value:
                     this._memoryStorage[key] = JSON.stringify(record);
                     break;
-                case Utils.StorageType.session:
+                case Utils.StorageType.session.value:
                     sessionStorage.setItem(key, JSON.stringify(record));
                     break;
-                case Utils.StorageType.local:
+                case Utils.StorageType.local.value:
                     localStorage.setItem(key, JSON.stringify(record));
                     break;
             }

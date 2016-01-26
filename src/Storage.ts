@@ -131,14 +131,14 @@ module Utils {
             record.value = value;
             record.expiresAt = new Date().getTime() + expirationMS;
 
-            switch (storageType) {
-                case StorageType.memory:
+            switch (storageType.value) {
+                case StorageType.memory.value:
                     this._memoryStorage[key] = JSON.stringify(record);
                     break;
-                case StorageType.session:
+                case StorageType.session.value:
                     sessionStorage.setItem(key, JSON.stringify(record));
                     break;
-                case StorageType.local:
+                case StorageType.local.value:
                     localStorage.setItem(key, JSON.stringify(record));
                     break;
             }
