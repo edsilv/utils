@@ -1,4 +1,3 @@
-/// <reference path="typings/jquery.d.ts" />
 declare module Utils {
     class Bools {
         static GetBool(val: any, defaultVal: boolean): boolean;
