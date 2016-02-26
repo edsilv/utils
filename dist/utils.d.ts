@@ -1,6 +1,13 @@
+/// <reference path="typings/jquery.d.ts" />
 declare module Utils {
     class Bools {
         static GetBool(val: any, defaultVal: boolean): boolean;
+    }
+}
+declare module Utils {
+    class Clipboard {
+        static Copy(elem: HTMLElement): void;
+        static SupportsCopy(): boolean;
     }
 }
 /**
