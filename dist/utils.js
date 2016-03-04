@@ -25,7 +25,7 @@ var Utils;
             document.execCommand("copy");
             $temp.remove();
         };
-        Clipboard.BrowserSupportsCopy = function () {
+        Clipboard.SupportsCopy = function () {
             return document.queryCommandSupported && document.queryCommandSupported('copy');
         };
         return Clipboard;

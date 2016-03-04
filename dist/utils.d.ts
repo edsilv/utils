@@ -6,7 +6,7 @@ declare module Utils {
 declare module Utils {
     class Clipboard {
         static Copy(text: string): void;
-        static BrowserSupportsCopy(): boolean;
+        static SupportsCopy(): boolean;
     }
 }
 /**
