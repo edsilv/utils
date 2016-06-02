@@ -18,7 +18,7 @@ var GulpConfig = (function () {
         this.browserifyConfig = {
             debug: false,
             transform: ['deamdify'],
-            standalone: config.name
+            standalone: this.name
         };
         this.browserifyTarget = this.dist;
     }

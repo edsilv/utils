@@ -1,11 +1,11 @@
 var c = require('../gulpfile.config');
 var config = new c();
 var gulp = require('gulp');
-var merge = require('merge2');
+var eventStream = require('event-stream');
 var ts = require('gulp-typescript');
 
 gulp.task('build', function() {
-    var tsResult = gulp.src(confg.tsSrc)
+    var tsResult = gulp.src(config.tsSrc)
         .pipe(ts(config.tsConfig));
 
     return eventStream.merge(
