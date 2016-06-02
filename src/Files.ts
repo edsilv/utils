@@ -1,7 +1,7 @@
 module Utils {
 
     export class Files {
-        static SimplifyMimeType(mime: string) {
+        static simplifyMimeType(mime: string) {
             switch (mime) {
                 case 'text/plain':
                     return 'txt';

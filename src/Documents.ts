@@ -1,6 +1,6 @@
 module Utils{
     export class Documents {
-        static IsInIFrame(): boolean {
+        static isInIFrame(): boolean {
             // see http://stackoverflow.com/questions/326069/how-to-identify-if-a-webpage-is-being-loaded-inside-an-iframe-or-directly-into-t
             try {
                 return window.self !== window.top;
@@ -9,7 +9,7 @@ module Utils{
             }
         }
 
-        static SupportsFullscreen(): boolean {
+        static supportsFullscreen(): boolean {
             var doc = document.documentElement;
             var support = doc.requestFullscreen || doc.mozRequestFullScreen ||
                         doc.webkitRequestFullScreen || doc.msRequestFullscreen;
@@ -17,14 +17,14 @@ module Utils{
             return support != undefined;
         }
 
-        static IsHidden(): boolean {
-            var prop = Documents.GetHiddenProp();
+        static isHidden(): boolean {
+            var prop = Documents.getHiddenProp();
             if (!prop) return false;
 
             return document[prop];
         }
 
-        static GetHiddenProp(): string{
+        static getHiddenProp(): string{
             var prefixes = ['webkit','moz','ms','o'];
 
             // if 'hidden' is natively supported just return it
