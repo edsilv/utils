@@ -12,9 +12,7 @@
         "lib": ["es6"]
     },
     "files": [
-        "src/Definitions.ts",
-        "src/StringValue.ts",
-        "src/TreeSortType.ts"
+        "src/Definitions.ts"
     ],
     "include": [
         "src/**/*",
