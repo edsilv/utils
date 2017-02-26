@@ -1,4 +1,4 @@
-module Utils.Maths {
+namespace Utils.Maths {
 
     export class Vector {
 
@@ -90,13 +90,13 @@ module Utils.Maths {
         }
 
         normalise(): void {
-            var m = this.mag();
+            const m: number = this.mag();
             if (m != 0 && m != 1) {
                 this.Div(m);
             }
         }
 
-        limit(max: number){
+        limit(max: number): void {
             if (this.magSq() > max * max) {
                 this.normalise();
                 this.mult(max);
@@ -107,12 +107,12 @@ module Utils.Maths {
             return (this.X == v.X && this.Y == v.Y);
         }
 
-        heading() {
-            var angle = Math.atan2(-this.Y, this.X);
+        heading(): number {
+            const angle: number = Math.atan2(-this.Y, this.X);
             return -1*angle;
         }
 
-        static random2D(): Vector{
+        static random2D(): Vector {
             return Vector.fromAngle((Math.random() * Math.TAU));
         }
 

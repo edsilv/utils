@@ -1,10 +1,10 @@
-module Utils {
+namespace Utils {
 
     export class Strings {
         static ellipsis(text: string, chars: number): string {
             if (text.length <= chars) return text;
-            var trimmedText = text.substr(0, chars);
-            var lastSpaceIndex = trimmedText.lastIndexOf(" ");
+            let trimmedText: string = text.substr(0, chars);
+            const lastSpaceIndex: number = trimmedText.lastIndexOf(" ");
             if (lastSpaceIndex != -1){
                 trimmedText = trimmedText.substr(0, Math.min(trimmedText.length, lastSpaceIndex));
             }
@@ -12,9 +12,9 @@ module Utils {
         }
 
         static htmlDecode(encoded: string): string {
-            var div = document.createElement('div');
+            const div: HTMLDivElement = document.createElement('div');
             div.innerHTML = encoded;
-            return div.firstChild.nodeValue;
+            return <string>(<Node>div.firstChild).nodeValue;
         }
     }
 
