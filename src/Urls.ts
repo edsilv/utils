@@ -9,7 +9,7 @@ namespace Utils {
             return(match ? decodeURIComponent(match[1].replace(/\+/g, " ")) : null);
         }
 
-        static setHashParameter(key: string, value: any, doc?: Document): void {
+        static setHashParameter(key: string, value: string, doc?: Document): void {
             if (!doc) doc = window.document;
 
             const kvp: string = this.updateURIKeyValuePair(doc.location.hash.replace('#?', ''), key, value);
