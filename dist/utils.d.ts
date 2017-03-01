@@ -1,3 +1,4 @@
+// utils v0.0.38 https://github.com/edsilv/utils
 /// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
 interface CanvasRenderingContext2D {
     webkitBackingStorePixelRatio: any;
@@ -127,6 +128,12 @@ declare namespace Utils {
 }
 
 declare namespace Utils {
+    class Objects {
+        static toPlainObject(value: any): any;
+    }
+}
+
+declare namespace Utils {
     class Storage {
         private static _memoryStorage;
         static clear(storageType?: StorageType): void;
@@ -177,3 +184,4 @@ declare namespace Utils {
         static convertToRelativeUrl(url: string): string;
     }
 }
+
