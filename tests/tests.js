@@ -22,5 +22,5 @@ describe("#toPlainObject", function() {
     data = { a: 1 };
 
     var test2 = Object.assign(data, utils.Objects.toPlainObject(newFoo));
-    test2.should.deep.equal({ a: 1, b: 2, c: 3 });
+    expect(test2.should.deep.equal({ a: 1, b: 2, c: 3 }));
 });

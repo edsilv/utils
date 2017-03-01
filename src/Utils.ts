@@ -1,1 +1,1 @@
-module.exports = Utils;
+(<any>global).Utils = module.exports = Utils;
