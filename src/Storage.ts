@@ -47,8 +47,16 @@ namespace Utils {
 
             if (!data) return null;
 
-            const item: StorageItem = JSON.parse(data);
+            let item: StorageItem | null = null;
 
+            try {
+                item = JSON.parse(data);
+            } catch (error) {
+                return null;
+            }
+
+            if (!item) return null;
+            
             if (this._isExpired(item)) return null;
 
             // useful reference

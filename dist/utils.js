@@ -504,7 +504,15 @@ var Utils;
             }
             if (!data)
                 return null;
-            var item = JSON.parse(data);
+            var item = null;
+            try {
+                item = JSON.parse(data);
+            }
+            catch (error) {
+                return null;
+            }
+            if (!item)
+                return null;
             if (this._isExpired(item))
                 return null;
             // useful reference
