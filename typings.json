@@ -1,0 +1,7 @@
+{
+  "name": "utils",
+  "dependencies": {},
+    "globalDependencies": {
+    "extensions": "github:edsilv/extensions/dist/extensions.d.ts#es6"
+  }
+}
