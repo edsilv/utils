@@ -1,6 +1,6 @@
 {
   "name": "utils",
-  "version": "0.0.38",
+  "version": "0.1.0",
   "description": "utilities",
   "main": "dist/extensions.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
     "@types/node": "^7.0.5",
-    "extensions": "edsilv/extensions#es6",
+    "extensions": "edsilv/extensions#v0.2.0",
     "gulp": "^3.8.11",
     "gulp-tasks": "viewdir/gulp-tasks#v1.0.5"
   },
