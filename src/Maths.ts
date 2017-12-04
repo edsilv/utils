@@ -113,7 +113,7 @@ namespace Utils.Maths {
         }
 
         static random2D(): Vector {
-            return Vector.fromAngle((Math.random() * Math.TAU));
+            return Vector.fromAngle((Math.random() * (Math.PI * 2)));
         }
 
         static fromAngle(angle: number): Vector {
