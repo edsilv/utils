@@ -1,11 +1,10 @@
 {
   "name": "utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "utilities",
   "main": "dist/extensions.js",
   "types": "./dist/utils.d.ts",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/utils.git"
