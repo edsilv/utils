@@ -1,4 +1,4 @@
-// utils v0.1.0 https://github.com/edsilv/utils
+// utils v0.1.1 https://github.com/edsilv/utils
 /// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
 interface CanvasRenderingContext2D {
     webkitBackingStorePixelRatio: any;
