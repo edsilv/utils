@@ -18,7 +18,6 @@
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
     "@types/node": "^7.0.5",
-    "extensions": "edsilv/extensions#v0.2.2",
     "gulp": "^3.8.11",
     "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
   },
