@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "description": "utilities",
   "main": "dist/extensions.js",
+  "types": "./dist/utils.d.ts",
   "scripts": {
-    "postinstall": "typings install"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/utils.git"
   },
   "keywords": [],
-  "author": "Edward Silverton <e.silverton@gmail.com> (http://edsilv.com)",
+  "author": "@edsilv",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/edsilv/utils/issues"
@@ -19,9 +19,9 @@
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
     "@types/node": "^7.0.5",
-    "extensions": "edsilv/extensions#v0.2.0",
+    "extensions": "edsilv/extensions#v0.2.2",
     "gulp": "^3.8.11",
-    "gulp-tasks": "viewdir/gulp-tasks#v1.0.5"
+    "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
   },
   "dependencies": {
     "@types/jquery": "^2.0.40"
