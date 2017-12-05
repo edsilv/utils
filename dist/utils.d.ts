@@ -1,4 +1,4 @@
-// utils v0.1.1 https://github.com/edsilv/utils
+// utils v0.1.2 https://github.com/edsilv/utils
 interface CanvasRenderingContext2D {
     webkitBackingStorePixelRatio: any;
     mozBackingStorePixelRatio: any;
