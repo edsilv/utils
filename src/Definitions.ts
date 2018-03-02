@@ -1,3 +1,6 @@
+declare function escape(s: string): any;
+declare function unescape(s: string): any;
+
 interface CanvasRenderingContext2D {
     webkitBackingStorePixelRatio: any;
     mozBackingStorePixelRatio: any;

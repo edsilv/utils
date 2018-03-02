@@ -15,7 +15,6 @@
         "src/Definitions.ts"
     ],
     "include": [
-        "src/**/*",
-        "typings/**/*"
+        "src/**/*"
     ]
 }

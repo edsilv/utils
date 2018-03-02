@@ -1,4 +1,5 @@
-// utils v0.1.2 https://github.com/edsilv/utils
+declare function escape(s: string): any;
+declare function unescape(s: string): any;
 interface CanvasRenderingContext2D {
     webkitBackingStorePixelRatio: any;
     mozBackingStorePixelRatio: any;
@@ -80,31 +81,10 @@ declare namespace Utils {
     }
 }
 
-declare namespace Utils.Maths {
-    class Vector {
-        X: number;
-        Y: number;
-        constructor(x: number, y: number);
-        get(): Vector;
-        set(x: number, y: number): void;
-        add(v: Vector): void;
-        static add(v1: Vector, v2: Vector): Vector;
-        sub(v: Vector): void;
-        static sub(v1: Vector, v2: Vector): Vector;
-        mult(n: number): void;
-        static mult(v1: Vector, v2: Vector): Vector;
-        static multN(v1: Vector, n: number): Vector;
-        Div(n: number): void;
-        static div(v1: Vector, v2: Vector): Vector;
-        static divN(v1: Vector, n: number): Vector;
-        mag(): number;
-        magSq(): number;
-        normalise(): void;
-        limit(max: number): void;
-        equals(v: Vector): boolean;
-        heading(): number;
-        static random2D(): Vector;
-        static fromAngle(angle: number): Vector;
+declare namespace Utils {
+    class Maths {
+        static normalise(num: number, min: number, max: number): number;
+        static median(values: number[]): number;
     }
 }
 
@@ -168,6 +148,11 @@ declare namespace Utils {
     class Strings {
         static ellipsis(text: string, chars: number): string;
         static htmlDecode(encoded: string): string;
+        static format(str: string, ...values: string[]): string;
+        static isAlphanumeric(str: string): boolean;
+        static toCssClass(str: string): string;
+        static toFileName(str: string): string;
+        static utf8_to_b64(str: string): string;
     }
 }
 
