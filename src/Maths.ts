@@ -20,6 +20,10 @@ namespace Utils {
                 return (values[half - 1] + values[half]) / 2.0;
             }
         }
+
+        static clamp(value: number, min: number, max: number): number {
+            return Math.min(Math.max(value, min), max);
+        }
         
     }
 

@@ -48,6 +48,13 @@ describe("math", () => {
 
     });
 
+    it("clamps", () => {
+
+        expect(utils.Maths.clamp(11, 0, 10) === 10);
+        expect(utils.Maths.clamp(4, 5, 10) === 5);
+
+    });
+
 });
 
 // objects

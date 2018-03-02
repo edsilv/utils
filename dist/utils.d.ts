@@ -1,4 +1,4 @@
-// utils v0.2.0 https://github.com/edsilv/utils
+// utils v0.2.1 https://github.com/edsilv/utils
 declare function escape(s: string): any;
 declare function unescape(s: string): any;
 interface CanvasRenderingContext2D {
@@ -86,6 +86,7 @@ declare namespace Utils {
     class Maths {
         static normalise(num: number, min: number, max: number): number;
         static median(values: number[]): number;
+        static clamp(value: number, min: number, max: number): number;
     }
 }
 
