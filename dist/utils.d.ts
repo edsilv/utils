@@ -27,8 +27,10 @@ declare namespace Utils {
 
 declare namespace Utils {
     class Clipboard {
-        static copy(text: string): void;
         static supportsCopy(): boolean;
+        static copy(text: string): void;
+        private static hideButKeepEnabled(textArea);
+        private static convertBrToNewLine(text);
     }
 }
 
