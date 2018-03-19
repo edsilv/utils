@@ -17,8 +17,7 @@ namespace Utils.Measurements {
                 scale = width2 / width1;
                 width = width1 * scale;
                 height = height1 * scale;
-            }
-            if (ratio2 < ratio1) {
+            } else {
                 scale = height2 / height1;
                 width = width1 * scale;
                 height = height1 * scale;
