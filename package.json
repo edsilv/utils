@@ -2,9 +2,11 @@
   "name": "utils",
   "version": "0.2.1",
   "description": "utilities",
-  "main": "dist/extensions.js",
+  "main": "dist/utils.js",
   "types": "./dist/utils.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc && browserify ./src/index.js -o ./dist/utils.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/utils.git"
@@ -18,10 +20,7 @@
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
     "@types/node": "^7.0.5",
-    "gulp": "^3.8.11",
-    "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
-  },
-  "dependencies": {
-    "@types/jquery": "^2.0.40"
+    "browserify": "^16.2.2",
+    "typescript": "^2.9.2"
   }
 }

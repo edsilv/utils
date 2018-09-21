@@ -13,3 +13,7 @@ interface HTMLElement {
     mozRequestFullScreen: any;
     msRequestFullscreen: any;
 }
+
+interface window {
+    navigator: any;
+}
