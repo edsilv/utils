@@ -7,9 +7,9 @@ namespace Utils {
             return this.getHashParameterFromString(key, doc.location.hash);
         }
 
-        static getHashParameterFromString(key: string, fragment: string): string | null {
+        static getHashParameterFromString(key: string, url: string): string | null {
             const regex = new RegExp("#.*[?&]" + key + "=([^&]+)(&|$)");
-            const match = regex.exec(fragment);
+            const match = regex.exec(url);
             return(match ? decodeURIComponent(match[1].replace(/\+/g, " ")) : null);
         }
 

@@ -83,3 +83,18 @@ describe("object", () => {
     });
 
 });
+
+// urls
+
+// describe("urls", () => {
+
+//     it("gets hash parameter from string", () => {
+
+//         var url = "http://localhost:8002/examples/#rid=https://api.bl.uk/metadata/iiif/ark:/81055/vdc_100052359795.0x000007";
+
+//         var rid = utils.Urls.getHashParameterFromString('rid', url);
+
+//         expect(rid === "https://api.bl.uk/metadata/iiif/ark:/81055/vdc_100052359795.0x000007");
+//     });
+
+// });
