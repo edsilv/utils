@@ -5,7 +5,7 @@
   "main": "dist/utils.js",
   "types": "./types/index.d.ts",
   "scripts": {
-    "build": "tsc && browserify ./src/index.js -o ./dist/utils.js"
+    "build": "tsc && browserify ./src/utils.js -o ./dist/utils.js"
   },
   "repository": {
     "type": "git",

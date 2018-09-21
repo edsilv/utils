@@ -642,6 +642,7 @@ class Urls {
 exports.Urls = Urls;
 
 },{}],20:[function(require,module,exports){
+(function (global){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const _Async = require("./Async");
@@ -685,5 +686,7 @@ var Utils;
     Utils.Strings = _Strings;
     Utils.Urls = _Urls;
 })(Utils = exports.Utils || (exports.Utils = {}));
+global.Utils = module.exports = Utils;
 
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./Async":1,"./Bools":2,"./Clipboard":3,"./Colors":4,"./Dates":5,"./Device":6,"./Documents":7,"./Events":8,"./Files":9,"./Keyboard":10,"./Maths":11,"./Measurements":12,"./Numbers":13,"./Objects":14,"./Storage":15,"./StorageItem":16,"./StorageType":17,"./Strings":18,"./Urls":19}]},{},[20]);

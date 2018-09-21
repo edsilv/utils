@@ -39,3 +39,5 @@ export namespace Utils {
     export import Strings = _Strings;
     export import Urls = _Urls;
 }
+
+(<any>global).Utils = module.exports = Utils;
