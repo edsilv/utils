@@ -3,7 +3,7 @@
   "version": "0.2.1",
   "description": "utilities",
   "main": "dist/utils.js",
-  "types": "./types/index.d.ts",
+  "types": "./types/Utils.d.ts",
   "scripts": {
     "build": "tsc && browserify ./src/utils.js -o ./dist/utils.js"
   },
