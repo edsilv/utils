@@ -4,20 +4,23 @@ namespace Utils {
 
         static getHashParameter(key: string, doc?: Document): string | null {
             if (!doc) doc = window.document;
-            const regex: RegExp = new RegExp("#.*[?&]" + key + "=([^&]+)(&|$)");
-            const match: RegExpExecArray | null = regex.exec(doc.location.hash);
+            return this.getHashParameterFromString(key, doc.location.hash);
+        }
+
+        static getHashParameterFromString(key: string, fragment: string): string | null {
+            const regex = new RegExp("#.*[?&]" + key + "=([^&]+)(&|$)");
+            const match = regex.exec(fragment);
             return(match ? decodeURIComponent(match[1].replace(/\+/g, " ")) : null);
         }
 
-        static setHashParameter(key: string, value: string, doc?: Document): void {
+        static setHashParameter(key: string, value: any, doc?: Document): void{
             if (!doc) doc = window.document;
-
-            const kvp: string = this.updateURIKeyValuePair(doc.location.hash.replace('#?', ''), key, value);
-            const newHash: string = "#?" + kvp;
-            let url: string = doc.URL;
+            const kvp = this.updateURIKeyValuePair(doc.location.hash.replace('#?', ''), key, value);
+            const newHash = "#?" + kvp;
+            let url = doc.URL;
 
             // remove hash value (if present).
-            const index: number = url.indexOf('#');
+            const index = url.indexOf('#');
 
             if (index != -1) {
                 url = url.substr(0, url.indexOf('#'));
@@ -33,15 +36,15 @@ namespace Utils {
 
         static getQuerystringParameterFromString(key: string, querystring: string): string | null {
             key = key.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-            const regex: RegExp = new RegExp("[\\?&]" + key + "=([^&#]*)");
-            const match: RegExpExecArray | null = regex.exec(querystring);
+            const regex = new RegExp("[\\?&]" + key + "=([^&#]*)");
+            const match = regex.exec(querystring);
             return(match ? decodeURIComponent(match[1].replace(/\+/g, " ")) : null);
         }
 
-        static setQuerystringParameter(key: string, value: any, doc?: Document): void {
+        static setQuerystringParameter(key: string, value: any, doc?: Document): void{
             if (!doc) doc = window.document;
 
-            const kvp: string = this.updateURIKeyValuePair(doc.location.hash.replace('#?', ''), key, value);
+            const kvp = this.updateURIKeyValuePair(doc.location.hash.replace('#?', ''), key, value);
 
             // redirects.
             window.location.search = kvp;
@@ -52,14 +55,14 @@ namespace Utils {
             key = encodeURIComponent(key);
             value = encodeURIComponent(value);
 
-            const kvp: string[] = uriSegment.split('&');
+            const kvp = uriSegment.split('&');
 
             // Array.split() returns an array with a single "" item
             // if the target string is empty. remove if present.
             if (kvp[0] == "") kvp.shift();
 
-            let i: number = kvp.length;
-            let x: string[];
+            let i = kvp.length;
+            let x;
 
             // replace if already present.
             while (i--) {
@@ -80,15 +83,15 @@ namespace Utils {
             return kvp.join('&');
         }
 
-        static getUrlParts(url: string): HTMLAnchorElement {
-            const a: HTMLAnchorElement = document.createElement('a');
+        static getUrlParts(url: string): any {
+            const a = document.createElement('a');
             a.href = url;
             return a;
         }
 
         static convertToRelativeUrl(url: string): string {
-            const parts: HTMLAnchorElement = this.getUrlParts(url);
-            let relUri: string = parts.pathname + (<any>parts).searchWithin;
+            const parts = this.getUrlParts(url);
+            let relUri = parts.pathname + parts.searchWithin;
 
             if (!relUri.startsWith("/")) {
                 relUri = "/" + relUri;
@@ -97,4 +100,5 @@ namespace Utils {
             return relUri;
         }
     }
+
 }
