@@ -1,4 +1,4 @@
-// utils v0.2.1 https://github.com/edsilv/utils
+// utils v0.2.2 https://github.com/edsilv/utils
 declare function escape(s: string): any;
 declare function unescape(s: string): any;
 interface CanvasRenderingContext2D {
