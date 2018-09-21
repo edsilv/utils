@@ -18,7 +18,7 @@ import * as _StorageType from './StorageType';
 import * as _Strings from './Strings';
 import * as _Urls from './Urls';
 
-export namespace Utils {
+declare namespace Utils {
     export import Async = _Async;
     export import Bools = _Bools;
     export import Clipboard = _Clipboard;

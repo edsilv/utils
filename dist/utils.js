@@ -664,28 +664,6 @@ const _StorageItem = require("./StorageItem");
 const _StorageType = require("./StorageType");
 const _Strings = require("./Strings");
 const _Urls = require("./Urls");
-var Utils;
-(function (Utils) {
-    Utils.Async = _Async;
-    Utils.Bools = _Bools;
-    Utils.Clipboard = _Clipboard;
-    Utils.Colors = _Colors;
-    Utils.Dates = _Dates;
-    Utils.Device = _Device;
-    Utils.Documents = _Documents;
-    Utils.Events = _Events;
-    Utils.Files = _Files;
-    Utils.Keyboard = _Keyboard;
-    Utils.Maths = _Maths;
-    Utils.Measurements = _Measurements;
-    Utils.Numbers = _Numbers;
-    Utils.Objects = _Objects;
-    Utils.Storage = _Storage;
-    Utils.StorageItem = _StorageItem;
-    Utils.StorageType = _StorageType;
-    Utils.Strings = _Strings;
-    Utils.Urls = _Urls;
-})(Utils = exports.Utils || (exports.Utils = {}));
 global.Utils = module.exports = Utils;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
