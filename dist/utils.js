@@ -664,7 +664,29 @@ const _StorageItem = require("./StorageItem");
 const _StorageType = require("./StorageType");
 const _Strings = require("./Strings");
 const _Urls = require("./Urls");
-global.Utils = module.exports = Utils;
+var Utils;
+(function (Utils) {
+    Utils.Async = _Async;
+    Utils.Bools = _Bools;
+    Utils.Clipboard = _Clipboard;
+    Utils.Colors = _Colors;
+    Utils.Dates = _Dates;
+    Utils.Device = _Device;
+    Utils.Documents = _Documents;
+    Utils.Events = _Events;
+    Utils.Files = _Files;
+    Utils.Keyboard = _Keyboard;
+    Utils.Maths = _Maths;
+    Utils.Measurements = _Measurements;
+    Utils.Numbers = _Numbers;
+    Utils.Objects = _Objects;
+    Utils.Storage = _Storage;
+    Utils.StorageItem = _StorageItem;
+    Utils.StorageType = _StorageType;
+    Utils.Strings = _Strings;
+    Utils.Urls = _Urls;
+})(Utils = exports.Utils || (exports.Utils = {}));
+global.Utils = Utils;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./Async":1,"./Bools":2,"./Clipboard":3,"./Colors":4,"./Dates":5,"./Device":6,"./Documents":7,"./Events":8,"./Files":9,"./Keyboard":10,"./Maths":11,"./Measurements":12,"./Numbers":13,"./Objects":14,"./Storage":15,"./StorageItem":16,"./StorageType":17,"./Strings":18,"./Urls":19}]},{},[20]);
