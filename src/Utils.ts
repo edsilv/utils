@@ -662,4 +662,4 @@ namespace Utils {
     }
 }
 
-(<any>window).Utils = module.exports = Utils;
+(<any>window).Utils = Utils;

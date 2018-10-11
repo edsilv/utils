@@ -645,4 +645,4 @@ var Utils;
     }());
     Utils.Urls = Urls;
 })(Utils || (Utils = {}));
-window.Utils = module.exports = Utils;
+window.Utils = Utils;
