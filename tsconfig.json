@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "declaration": true,
+        "declarationDir": "./dist/",
         "noImplicitAny": true,
         "noImplicitReturns": true,
         "noImplicitThis": false,
@@ -9,11 +10,13 @@
         "noUnusedLocals": true,
         "noUnusedParameters": false,
         "strictNullChecks": true,
-        "lib": ["es6", "dom"]
+        "lib": ["es6", "dom"],
+        "types": [
+            "@types/node",
+            "@types/jquery"
+        ],
+        "outDir": "./dist/"
     },
-    "files": [
-        "src/Definitions.ts"
-    ],
     "include": [
         "src/**/*"
     ]

@@ -1,10 +1,16 @@
 {
-  "name": "utils",
-  "version": "0.2.2",
-  "description": "utilities",
-  "main": "dist/extensions.js",
-  "types": "./dist/utils.d.ts",
-  "scripts": {},
+  "name": "@edsilv/utils",
+  "version": "0.2.3",
+  "description": "client-side utils",
+  "main": "./dist/Utils.js",
+  "types": "./dist/Utils.d.ts",
+  "scripts": {
+    "clean": "npx rimraf ./dist",
+    "build-ts": "npx tsc",
+    "minify-js": "npx uglify-js ./dist/Utils.js > ./dist/Utils.min.js",
+    "build": "npm run clean && npm run build-ts && npm run minify-js",
+    "start": "npx serve"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/edsilv/utils.git"
@@ -17,11 +23,13 @@
   },
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
-    "@types/node": "^7.0.5",
-    "gulp": "^3.8.11",
-    "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
+    "rimraf": "^2.6.2",
+    "serve": "^10.0.2",
+    "typescript": "^3.1.1",
+    "uglify-js": "^3.4.9"
   },
   "dependencies": {
+    "@types/node": "^7.0.5",
     "@types/jquery": "^2.0.40"
   }
 }
