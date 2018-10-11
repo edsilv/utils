@@ -1,6 +1,6 @@
 {
   "name": "@edsilv/utils",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "client-side utils",
   "main": "./dist/Utils.js",
   "types": "./dist/Utils.d.ts",
