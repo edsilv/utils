@@ -1,8 +1,9 @@
 {
   "name": "@edsilv/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "client-side utils",
-  "main": "./dist-esmodule/index.js",
+  "main": "./dist-umd/utils.js",
+  "module": "./dist-esmodule/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
     "clean": "rimraf -rf dist-umd dist-commonjs dist-esmodule dist-var types",
