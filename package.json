@@ -2,14 +2,19 @@
   "name": "@edsilv/utils",
   "version": "0.2.6",
   "description": "client-side utils",
-  "main": "./dist/Utils.js",
-  "types": "./dist/Utils.d.ts",
+  "main": "./dist-esmodule/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "clean": "npx rimraf ./dist",
-    "build-ts": "npx tsc",
-    "minify-js": "npx uglify-js ./dist/Utils.js > ./dist/Utils.min.js",
-    "build": "npm run clean && npm run build-ts && npm run minify-js",
-    "start": "npx serve"
+    "clean": "rimraf -rf dist-umd dist-commonjs dist-esmodule dist-var types",
+    "build:commonjs": "tsc",
+    "build:esmodule": "tsc -m es6 --outDir dist-esmodule",
+    "build:umd": "webpack",
+    "build:var": "cross-env NODE_WEBPACK_LIBRARY_PATH=dist-var NODE_WEBPACK_LIBRARY_TARGET=var webpack",
+    "build:types": "dts-bundle-generator --umd-module-name manifesto -o types/index.d.ts dist-esmodule/index.d.ts",
+    "build:docs": "rimraf -rf docs && typedoc --out docs --name manifesto --theme default --ignoreCompilerErrors --experimentalDecorators --emitDecoratorMetadata --target ES6 --moduleResolution node --preserveConstEnums --stripInternal --suppressExcessPropertyErrors --suppressImplicitAnyIndexErrors --module commonjs src/ && touch docs/.nojekyll",
+    "build": "npm run clean && npm run build:commonjs && npm run build:esmodule && npm run build:umd && npm run build:var && npm run build:types",
+    "prepublishOnly": "npm run build && npm test",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,15 +28,20 @@
   },
   "homepage": "https://github.com/edsilv/utils",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "rimraf": "^2.6.2",
-    "serve": "^10.0.2",
-    "typescript": "^3.1.1",
-    "uglify-js": "^3.4.9"
+    "awesome-typescript-loader": "^5.2.1",
+    "chai": "2.3.0",
+    "cross-env": "^5.2.1",
+    "dts-bundle-generator": "^2.1.0",
+    "http": "0.0.0",
+    "mocha": "^2.2.4",
+    "rimraf": "^3.0.0",
+    "typedoc": "0.14.0",
+    "typescript": "3.6.3",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@types/node": "^7.0.5",
+    "@types/node": "8.10.52",
     "@types/jquery": "^2.0.40"
   }
 }

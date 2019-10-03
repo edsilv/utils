@@ -1,6 +1,9 @@
-node_modules
+dist-commonjs
+dist-esmodule
+dist-umd
+dist-var
+coverage
 npm-debug.log
-examples
+node_modules
 debug.log
-src/*.js
-dist
+types

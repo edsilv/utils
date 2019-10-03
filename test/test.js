@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const should = require('chai').should();
-const utils = require('../dist/utils');
+const utils = require('../dist-commonjs/');
 
 // strings
 
