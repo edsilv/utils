@@ -34,7 +34,7 @@
     "cross-env": "^5.2.1",
     "dts-bundle-generator": "^2.1.0",
     "http": "0.0.0",
-    "mocha": "^2.2.4",
+    "mocha": "^10.1.0",
     "rimraf": "^3.0.0",
     "typedoc": "0.14.0",
     "typescript": "3.6.3",
